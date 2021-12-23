@@ -1,34 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
-import {useState} from "react";
+import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
 
 export default function App() {
-  const [text, editText] = useState('This is the initial value of the text')
-  return (
-      <View style={styles.container}>
-        <Text>Hello World</Text>
-        <Text>{text}</Text>
-        <View style={styles.separator} />
-        <Button
-            title="Click me"
-            color= '#2f299e'
-            onPress = { () => editText('Yes, the text changed!') }
-        />
-        <StatusBar style="auto" />
-      </View>
-  );
+    return (
+        <View style={styles.mainContainer}>
+            <View>
+                <Text style={styles.mainTitle}>This is the ToDo app!</Text>
+            </View>
+            <View style={styles.inputDiv}>
+                <TextInput placeholder={'write a task'} style={styles.textinput}/>
+                <Button
+                    title='Add' style={styles.btn}
+                />
+            </View>
+            <View>
+            </View>
+        </View>
+    );
 }
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  }
+    'mainContainer': {
+        padding: 30
+    },
+    'mainTitle': {
+        fontSize: 30,
+        fontWeight: "700",
+        alignItems: 'center',
+        marginBottom: 20,
+    },
+    'inputDiv': {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    'textinput': {
+        borderWidth: 3,
+        borderColor: 'red',
+        padding: 10,
+        width: '80%'
+    },
+    'btn': {
+        padding: 40,
+        height: 40
+    }
 });
