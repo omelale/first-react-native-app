@@ -12,7 +12,7 @@ export default function App() {
         <Button
             title="Click me"
             color= '#2f299e'
-            onPress = { () => editText('Uh Oh, the text changed!') }
+            onPress = { () => editText('Yes, the text changed!') }
         />
         <StatusBar style="auto" />
       </View>
