@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, FlatList, StyleSheet, Text, TextInput, View} from 'react-native';
+import { FlatList, StyleSheet, Text, View} from 'react-native';
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
@@ -12,13 +12,16 @@ export default function App() {
     const deleteAllGoals = () => {
         setGoals([]);
     }
+    const removeSingleGoal = () => {
+        console.log('touched')
+    }
     return (
         <View style={styles.mainContainer}>
             <View>
                 <Text style={styles.mainTitle}>This is the ToDo app!</Text>
             </View>
             <GoalInput onAddGoal={addGoal} onDeleteGoal={deleteAllGoals}/>
-            <FlatList data={goals} renderItem={itemData => <GoalItem title={itemData.item.value}/>}/>
+            <FlatList data={goals} renderItem={itemData => <GoalItem deleteSingleGoal={removeSingleGoal} title={itemData.item.value}/>}/>
         </View>);
 }
 const styles = StyleSheet.create({
