@@ -12,8 +12,10 @@ export default function App() {
     const deleteAllGoals = () => {
         setGoals([]);
     }
-    const removeSingleGoal = () => {
-        console.log('touched')
+    const removeSingleGoal = (goalId) => {
+        setGoals((stateOfGoals) => {
+            return stateOfGoals.filter((goal)=>{goal.id === goalId});
+        });
     }
     return (
         <View style={styles.mainContainer}>
@@ -21,7 +23,7 @@ export default function App() {
                 <Text style={styles.mainTitle}>This is the ToDo app!</Text>
             </View>
             <GoalInput onAddGoal={addGoal} onDeleteGoal={deleteAllGoals}/>
-            <FlatList data={goals} renderItem={itemData => <GoalItem deleteSingleGoal={removeSingleGoal} title={itemData.item.value}/>}/>
+            <FlatList data={goals} renderItem={itemData => <GoalItem id={itemData.item.id} deleteSingleGoal={removeSingleGoal} title={itemData.item.value}/>}/>
         </View>);
 }
 const styles = StyleSheet.create({
