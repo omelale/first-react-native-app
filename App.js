@@ -9,7 +9,7 @@ export default function App() {
     }
     const addGoal = () => {
         setGoals((stateOfGoals) => [...stateOfGoals, userInput]);
-        // setUserInput('');
+        setUserInput('');
     }
     const deleteAllGoals = () => {
         setGoals([]);
