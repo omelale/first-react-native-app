@@ -29,7 +29,7 @@ const GoalInput = (props) => {
         </View>
         <View>
             <Button
-                title='Delete all tasks'
+                title='Delete all goals'
                 style={styles.deleteBtn}
                 color='red'
                 onPress={props.onDeleteGoal}
