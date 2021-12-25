@@ -2,7 +2,7 @@ import React from "react";
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 
 const GoalItem = (props) => {
-    return <TouchableOpacity activeOpacity={0.75} onPress={props.deleteSingleGoal.bind(this, id)}><View style={styles.listComponent}><Text>{props.title}</Text></View></TouchableOpacity>
+    return <TouchableOpacity activeOpacity={0.75} onPress={props.deleteSingleGoal.bind(this, props.id)}><View style={styles.listComponent}><Text>{props.title}</Text></View></TouchableOpacity>
 }
 
 const styles = StyleSheet.create({
