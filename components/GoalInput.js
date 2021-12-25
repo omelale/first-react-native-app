@@ -17,7 +17,7 @@ const GoalInput = (props) => {
 
             <View style={styles.inlineButtons}>
                 <View style={styles.button}><Button
-                    title='Add' style={styles.btn}
+                    title='Add Goal' style={styles.btn}
                     onPress={props.onAddGoal.bind(this, userInput, setUserInput)}
                 /></View>
                 <View style={styles.button}><Button
