@@ -7,6 +7,9 @@ export default function App() {
     const [goals, setGoals] = useState([]);
     const [modalState, setModalState] = useState(false);
     const addGoal = (goalTitle, deleteInputField) => {
+        if(goalTitle.length === 0){
+            return;
+        }
         setGoals((stateOfGoals) => [...stateOfGoals, {key: Math.random().toString(), value: goalTitle}]);
         deleteInputField('');
         closeModal();
